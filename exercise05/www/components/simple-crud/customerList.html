@@ -1,0 +1,53 @@
+<div class="container">	
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h3 class="panel-title text-center">顧客検索</h3>
+		</div>
+		<div class="panel-body">
+			<div class="form-horizontal">
+				<div class="form-group">
+					<div class="col-md-2"><label class="control-label pull-right">顧客ID</label></div>
+					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="condition.customerId"/></div>
+				</div>
+				<div class="form-group" style="margin-bottom: 0px">
+					<div class="col-md-2"><label class="control-label pull-right">顧客名</label></div>
+					<div class="col-md-3"><input type="text" class="form-control" x-ng-model="condition.name" /></div>
+					<div class="col-md-offset-4 col-md-3">
+						<input type="button" class="btn btn-primary" style="width: 48%" value="クリア" />
+						<input type="button" class="btn btn-primary pull-right" style="width: 48%" x-ng-click="findList()" value="検索" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<table class="table table-striped">
+		<caption>
+			<input type="button" class="btn btn-primary btn-sm pull-right" x-ng-click="showNewDialog()" value="新規作成" />
+		</caption>
+		<thead>
+			<tr>
+				<th>顧客ID</th>
+				<th>顧客名</th>
+				<th>郵便番号</th>
+				<th>住所</th>
+				<th>電話番号</th>
+				<th>性別</th>
+				<th>登録日</th>
+				<th>更新日</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr x-ng-repeat="customer in customers" x-ng-click="showDetailDialog(customer)">
+				<td>{{customer.customerId}}</td>
+				<td>{{customer.name}}</td>
+				<td>{{customer.zip}}</td>
+				<td>{{customer.address}}</td>
+				<td>{{customer.phone}}</td>
+				<td>{{customer.sex}}</td>
+				<td>{{customer.serverCreateTime}}</td>
+				<td>{{customer.serverUpdateTime}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
