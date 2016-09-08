@@ -26,7 +26,7 @@ angular.module("app", ["ngRoute", "ui.bootstrap"])
 			}
 		}
 		else {
-			if (!AppPot.gLocalAuthenticator.isLogined()) {
+			if (!AppPot.LocalAuthenticator.isLogined()) {
 				$location.path("/login");
 				$route.reload();
 			}
