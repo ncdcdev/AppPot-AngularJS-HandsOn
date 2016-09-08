@@ -14,7 +14,7 @@ angular.module("app")
 			$scope.$apply();
 		})
 		.catch(function(error) {
-			alert(error);
+			alert(error.description);
 		});
 	}
 
@@ -36,7 +36,7 @@ angular.module("app")
 			$scope.customer = null;
 		})
 		.catch(function(error) {
-			alert(error);
+			alert(error.description);
 		});
 	}
 	

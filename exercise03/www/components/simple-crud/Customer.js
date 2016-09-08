@@ -2,22 +2,22 @@ angular.module("app")
 .factory("Customer", ["AppPot", function(AppPot) {
 	var customer = AppPot.defineModel("customer", {
 		"customerId": {
-    		type: AppPot.Type.Varchar
+    		type: AppPot.DataType.Varchar
 		},
 		"name": {
-    		type: AppPot.Type.Varchar
+    		type: AppPot.DataType.Varchar
 		},
 		"zip": {
-    		type: AppPot.Type.Varchar
+    		type: AppPot.DataType.Varchar
 		},
 		"address": {
-    		type: AppPot.Type.Varchar
+    		type: AppPot.DataType.Varchar
 		},
 		"phone": {
-    		type: AppPot.Type.Varchar
+    		type: AppPot.DataType.Varchar
 		},
 		"sex": {
-    		type: AppPot.Type.Long
+    		type: AppPot.DataType.Long
 		}
 	});
 

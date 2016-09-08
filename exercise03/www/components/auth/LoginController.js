@@ -20,7 +20,7 @@ angular.module("app")
 				$scope.$apply();
     		}
     		else {
-    			alert("システムエラー");
+    			alert(error.description);
     		}
     	});
 	};

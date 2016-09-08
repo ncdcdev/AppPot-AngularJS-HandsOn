@@ -20,13 +20,13 @@ angular.module("app", ["ngRoute", "ui.bootstrap"])
 
 	$rootScope.$on("$routeChangeStart", function(event, next, current) {
 		if (next.controller == "LoginController") {
-			if (AppPot.getAuthInfo().isLogined()) {
+			if (AppPot.LocalAuthenticator.isLogined()) {
 				$location.path("/");
 				$route.reload();
 			}
 		}
 		else {
-			if (!AppPot.getAuthInfo().isLogined()) {
+			if (!AppPot.gLocalAuthenticator.isLogined()) {
 				$location.path("/login");
 				$route.reload();
 			}
